@@ -37,11 +37,12 @@ export default function Navbar() {
   return (
     <Box
       as="header"
-      bgColor="black"
+      bgColor="transparent"
       color="white"
       display="flex"
       left={0}
       pos="absolute"
+      py="5px"
       right={0}
       top={0}
       w="full"
@@ -58,7 +59,8 @@ export default function Navbar() {
           aria-label="menu"
           colorScheme="green"
           display={{ base: 'flex', lg: 'none' }}
-          icon={<Box as={SvgMenuBars} fill="white" boxSize="21px" />}
+          h="36px"
+          icon={<Box as={SvgMenuBars} fill="white" w="21px" h="20px" />}
           onClick={() => setOpen(true)}
         />
         <Drawer
@@ -66,18 +68,22 @@ export default function Navbar() {
           onClose={() => setOpen(false)}
           placement="left"
         >
-          <DrawerContent bgColor="black">
-            <DrawerCloseButton color="white" />
-            <DrawerBody>
+          <DrawerContent bgColor="#1e1e1e">
+            <DrawerCloseButton color="white" mt="4" boxSize="38px" fontSize="22px" right="8" />
+            <DrawerBody mt="24" px={0}>
               <List as={Stack}>
                 {navLinks.map((lnk) => (
                   <ListItem
                     as={Link}
                     color="white"
                     fontWeight={500}
+                    fontFamily="Roboto"
+                    fontSize="md"
                     href={lnk.link}
                     key={lnk.title}
-                    px="15px"
+                    px="35px"
+                    pt="13px"
+                    pb="10px"
                   >
                     {lnk.title}
                   </ListItem>
@@ -98,7 +104,7 @@ export default function Navbar() {
               marginRight: '10px',
             }}
           />
-          <Text fontSize="40px" fontWeight={700}>
+          <Text fontSize="45px" fontWeight={700}>
             Aziz K.
           </Text>
         </Box>
@@ -144,8 +150,8 @@ export default function Navbar() {
                 w="18px"
               />
             }
-            h="44px"
             padding="10px 20px 10px 20px"
+            size="lg"
           >
             Resume
           </Button>
