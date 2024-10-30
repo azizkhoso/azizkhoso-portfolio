@@ -40,8 +40,7 @@ export default function Hero() {
             Full Stack Developer
           </Text>
           <Text fontSize="19px" mb="30px">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptas harum, illum
-            ipsa sequi ea ipsum nobis ullam, cum eligendi non corrupti! Recusandae, minus doloribus.
+            By writing efficient code with robust architecture, I develop masterpiece applications and maintain existing large scale projects.
           </Text>
           <Button
             variant="solid"
@@ -50,9 +49,12 @@ export default function Hero() {
             rightIcon={
               <Box as={SvgShortArrow} fill="white" h="28px" transform="rotate(90deg)" w="18px" />
             }
-            padding="10px 20px 10px 20px"
-            size="lg"
             alignSelf={{ base: 'center', lg: 'flex-start' }}
+            justifyContent="space-between"
+            gap="12px"
+            height="54px"
+            padding="15px 20px 15px 20px"
+            fontSize="16px"
           >
             Hire me
           </Button>

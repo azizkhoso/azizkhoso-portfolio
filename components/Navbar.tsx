@@ -150,8 +150,9 @@ export default function Navbar() {
                 w="18px"
               />
             }
-            padding="10px 20px 10px 20px"
-            size="lg"
+            height="54px"
+            padding="15px 20px 15px 20px"
+            fontSize="16px"
           >
             Resume
           </Button>

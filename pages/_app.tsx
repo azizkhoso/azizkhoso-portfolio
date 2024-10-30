@@ -1,10 +1,7 @@
 import type { AppProps } from 'next/app';
-import { Inter } from '@next/font/google';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 
 import '../styles/globals.css';
-
-const inter = Inter({ subsets: ['latin'] });
 
 const theme = extendTheme({
   sizes: {
@@ -44,7 +41,7 @@ const theme = extendTheme({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={inter.className}>
+    <main>
       <ChakraProvider theme={theme}>
         <Component {...pageProps} />
       </ChakraProvider>
