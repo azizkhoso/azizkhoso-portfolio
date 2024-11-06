@@ -3,7 +3,8 @@ import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 
 import '../styles/globals.css';
 
-const theme = extendTheme({
+/** @type {import('@chakra-ui/react').ChakraTheme} */
+export const theme = extendTheme({
   sizes: {
     container: {
       sm: '540px',
