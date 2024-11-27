@@ -1,5 +1,5 @@
 import type { AppProps } from 'next/app';
-import { ChakraProvider, extendTheme } from '@chakra-ui/react';
+import { ChakraProvider, extendTheme, Heading } from '@chakra-ui/react';
 
 import '../styles/globals.css';
 
@@ -24,6 +24,11 @@ export const theme = extendTheme({
     '9-12': '75%',
     '10-12': '83.3333%',
     '11-12': '91.6666%',
+  },
+  components: {
+    Heading: {
+      fontFamily: 'Inter'
+    }
   },
   colors: {
     green: {

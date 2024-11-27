@@ -86,16 +86,16 @@ export default function About() {
         <Flex width={{ base: 'full', lg: '50%' }}>
           <Box as={Flex} flexDirection="column" width="full" pos="relative" m="auto">
               <Heading fontSize="5xl" mb="5">My Advantages</Heading>
-              <Text>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet facilis velit voluptatem adipisci quasi minima deleniti consequuntur beatae ea fuga!</Text>
+              <Text>Developing and maintaining large scale applications requires hands-on experience in crucial technologies. I am always up to date with latest tools and trends.</Text>
               <Flex flexWrap="wrap" justify="space-between" align="center" mt="40px" gap="20px">
                 {
                   [
-                    {label: 'ReactJS', color: theme.colors.green[500], logo: '50%'},
+                    {label: 'NodeJS', color: theme.colors.red[500], logo: '50%'},
                     {label: 'ExpressJS', color: theme.colors.yellow[500], logo: '50%'},
+                    {label: 'ReactJS', color: theme.colors.green[500], logo: '50%'},
                     {label: 'MongoDB', color: theme.colors.orange[500], logo: '50%'},
-                    {label: 'Google Cloud', color: theme.colors.red[500], logo: '50%'},
-                    {label: 'ExpressJS', color: theme.colors.purple[500], logo: '50%'},
-                    {label: 'ExpressJS', color: theme.colors.blue[500], logo: '50%'},
+                    {label: 'Google Cloud', color: theme.colors.purple[500], logo: '50%'},
+                    {label: 'SQL', color: theme.colors.blue[500], logo: '50%'},
                   ].map((adv) => (
                     <Flex
                       key={adv.label}
