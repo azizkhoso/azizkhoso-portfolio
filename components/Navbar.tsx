@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   Box,
-  Button,
+  // Button,
   Container,
   Drawer,
   DrawerBody,
@@ -21,6 +21,7 @@ import Link from 'next/link';
 import face from '../public/face.png';
 import SvgShortArrow from './Svg/SvgShortArrow';
 import SvgMenuBars from './Svg/SvgMenuBars';
+import Button from './common/Button';
 
 const navLinks = [
   { title: 'Home', link: '#name' },
@@ -92,7 +93,7 @@ export default function Navbar() {
             </DrawerBody>
           </DrawerContent>
         </Drawer>
-        <Box as={Flex} alignItems="center" py="1" w="2-12" whiteSpace="nowrap">
+        <Box as={Flex} alignItems="center" py="1" w="2-12">
           <Image
             alt="azizkhoso-face"
             src={face.src}
@@ -104,8 +105,8 @@ export default function Navbar() {
               marginRight: '10px',
             }}
           />
-          <Text fontSize="45px" fontWeight={700}>
-            Aziz K.
+          <Text fontSize={{base: '2xl', lg: '5xl'}} fontWeight={700}>
+            Aziz
           </Text>
         </Box>
         <Box
@@ -137,22 +138,18 @@ export default function Navbar() {
         </Box>
         <Box display="flex" alignItems="center" justifyContent="flex-end" w="2-12">
           <Button
-            variant="solid"
-            borderRadius={9999}
-            colorScheme="green"
+            variant="rounded"
             rightIcon={
               <Box
                 as={SvgShortArrow}
                 fill="white"
                 h="28px"
-                mt="2"
+                mt="1"
+                ml={-1}
                 transform="rotate(180deg)"
                 w="18px"
               />
             }
-            height="54px"
-            padding="15px 20px 15px 20px"
-            fontSize="16px"
           >
             Resume
           </Button>

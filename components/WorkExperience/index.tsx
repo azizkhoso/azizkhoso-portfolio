@@ -22,6 +22,7 @@ export default function WorkExperience() {
             ]
               .map((wk) => (
                 <Box
+                  key={wk.startDate}
                   padding="20px 70px"
                   background="#282828"
                   borderRadius="8px"

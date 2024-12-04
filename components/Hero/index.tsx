@@ -1,5 +1,4 @@
-import Image from 'next/image';
-import { Box, Button, Container, Flex, Text } from '@chakra-ui/react';
+import { Box, Container, Flex, Text, Image } from '@chakra-ui/react';
 import SvgShortArrow from '../Svg/SvgShortArrow';
 
 import halfProfile from '../../public/half-profile.png';
@@ -7,6 +6,7 @@ import reactIcon from '../../public/react-icon.svg';
 import nodejsIcon from '../../public/nodejs-icon.svg';
 import mongodbIcon from '../../public/mongodb-icon.svg';
 import completeProject from '../../public/complete-project.svg';
+import Button from '../common/Button';
 
 export default function Hero() {
   return (
@@ -15,7 +15,7 @@ export default function Hero() {
         as={Container}
         maxW="container.2xl"
         pb="16"
-        pt="36"
+        pt={{base: '8', lg: '36'}}
         justifyContent="space-between"
         display="flex"
         flexFlow="row wrap"
@@ -29,32 +29,24 @@ export default function Hero() {
           pb="85px"
           color="white"
         >
-          <Text fontWeight="700" fontSize="60px">
-            <Text as="span" fontSize="45px" color="yellow">
+          <Text fontWeight="700" fontSize={{base: '3xl', md: '6xl', lg: '8xl' }}>
+            <Text as="span" fontSize={{base: '2xl', md: '4xl', lg: '5xl'}} color="yellow">
               Hello, I am
             </Text>
             <br />
             Abdul Aziz Khoso.
           </Text>
-          <Text fontWeight={700} fontSize="28px" color="#59c378" mb={5}>
+          <Text fontWeight={700} fontSize={{base: 'lg', md: '2xl', lg: '3xl'}} color="#59c378" mb={5}>
             Full Stack Developer
           </Text>
-          <Text fontSize="19px" mb="30px">
+          <Text fontSize={{base: 'md', md: 'lg'}} mb="30px">
             By writing efficient code with robust architecture, I develop masterpiece applications and maintain existing large scale projects.
           </Text>
           <Button
-            variant="solid"
-            borderRadius={9999}
-            colorScheme="green"
+            variant="rounded"
             rightIcon={
               <Box as={SvgShortArrow} fill="white" h="28px" transform="rotate(90deg)" w="18px" />
             }
-            alignSelf={{ base: 'center', lg: 'flex-start' }}
-            justifyContent="space-between"
-            gap="12px"
-            height="54px"
-            padding="15px 20px 15px 20px"
-            fontSize="16px"
           >
             Hire me
           </Button>
@@ -65,12 +57,16 @@ export default function Hero() {
           alignItems={{ base: 'center', lg: 'flex-start' }}
           textAlign={{ base: 'center', lg: 'left' }}
         >
-          <Box width="600px" height="600px" pos="relative">
+          <Box 
+            width={{base: '300px', md: '400px', lg: '450px', xl: '500px'}}
+            height={{base: '300px', md: '400px', lg: '450px', xl: '500px'}}
+            pos="relative"
+          >
             {[
-              { icon: reactIcon, top: '10%', left: '0' },
-              { icon: nodejsIcon, top: '10%', right: '0' },
-              { icon: mongodbIcon, bottom: '10%', right: '0' },
-              { icon: completeProject, bottom: '10%', left: '0', isDifferent: true },
+              { icon: reactIcon.src, top: '1%', left: '-5%' },
+              { icon: nodejsIcon.src, top: '1%', right: '-5%' },
+              { icon: mongodbIcon.src, bottom: '1%', right: '-5%' },
+              { icon: completeProject.src, bottom: '1%', left: '-5%', isDifferent: true },
             ].map((item, index) => (
               <Box
                 key={index}
@@ -102,9 +98,7 @@ export default function Hero() {
             ))}
             <Image
               src={halfProfile.src}
-              width={600}
-              height={600}
-              style={{ borderRadius: '50%', backgroundColor: '#4fc7ea' }}
+              style={{ borderRadius: '50%', backgroundColor: '#4fc7ea', width: '100% !important' }}
               alt="half-profile"
             />
           </Box>
