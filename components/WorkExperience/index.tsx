@@ -2,7 +2,7 @@ import { Box, Container, Flex, Heading, Text } from '@chakra-ui/react';
 
 export default function WorkExperience() {
   return (
-    <Box bgColor="blackAlpha.900">
+    <Box bgColor="black">
       <Container
         maxWidth="container.2xl"
         justifyContent="space-between"

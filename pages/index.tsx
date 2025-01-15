@@ -4,6 +4,7 @@ import About from '../components/About';
 import Hero from '../components/Hero';
 import Navbar from '../components/Navbar';
 import WorkExperience from '../components/WorkExperience';
+import RecentWork from '../components/RecentWork';
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Hero />
       <About />
       <WorkExperience />
+      <RecentWork />
     </Box>
   );
 }
