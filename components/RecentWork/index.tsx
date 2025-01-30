@@ -6,11 +6,12 @@ import 'slick-carousel/slick/slick-theme.css';
 import React from 'react';
 import Button from '../common/Button';
 import SvgShortArrow from '../Svg/SvgShortArrow';
+import SvgWinner from '../Svg/SvgWinner';
 
 const projects = [
-  { name: 'Zoxxo', category: 'Web App', image: 'https://dummyimage.com/400x400/000/fff&text=Zoxxo' },
-  { name: 'Jebreal', category: 'Web App', image: 'https://dummyimage.com/400x400/000/fff&text=Jebreal' },
-  { name: 'Grade My Faculty', category: 'Web App', image: 'https://dummyimage.com/400x400/000/fff&text=Grade My Faculty' }
+  { name: 'Zoxxo', category: 'Web App', image: 'https://dummyimage.com/1200x1200/000/fff&text=Zoxxo' },
+  { name: 'Jebreal', category: 'Web App', image: 'https://dummyimage.com/1200x1200/000/fff&text=Jebreal' },
+  { name: 'Grade My Faculty', category: 'Web App', image: 'https://dummyimage.com/1200x1200/000/fff&text=Grade My Faculty' }
 ]
 
 function SimpleSlider() {
@@ -20,10 +21,15 @@ function SimpleSlider() {
   const settings = {
     infinite: true,
     arrows: false,
+    slidesToShow: 3,
+    slidesToScroll: 1,
     speed: 500,
+    autoplay: true,
+    autoplaySpeed: 3000, // interval after which slide is changed
+    cssEase: 'ease-in',
     responsive: [
       {
-        breakpoint: 400,
+        breakpoint: 600,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -31,7 +37,7 @@ function SimpleSlider() {
         }
       },
       {
-        breakpoint: 700,
+        breakpoint: 900,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
@@ -39,9 +45,9 @@ function SimpleSlider() {
         }
       },
       {
-        breakpoint: 1000,
+        breakpoint: 1200,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
         }
@@ -52,8 +58,8 @@ function SimpleSlider() {
     <Box display="flex" flexDir="column">
       <Slider ref={(s) => {if (s) sliderRef.current = s;}} {...settings}>
         {projects.map((proj) => (
-          <Flex flexDir="column" w="full" border="2px solid gray ">
-            <Box boxSize="400px" overflow="hidden">
+          <Flex key={proj.name} flexDir="column" w="full" border="2px solid gray" px="2">
+            <Box w="full" minH="400px" overflow="hidden">
               <Img src={proj.image} _hover={{ transform: 'scale(1.2)' }} />
             </Box>
             <Heading as="h4" mt="7" fontSize="xl">{proj.name}</Heading>
@@ -62,10 +68,10 @@ function SimpleSlider() {
         ))}
       </Slider>
       <Flex w="full" alignItems="center" py="4" gap="8px" justifyContent="center">
-        <Button variant="rounded" onClick={prev}>
+        <Button variant="simple" rounded="full" sx={{padding: 0, justifyContent: 'center'}} onClick={prev}>
           <Box as={SvgShortArrow} sx={{path: {fill: 'white'}, transform: 'rotate(-90deg)', aspectRatio: '1'}} padding={0} />
         </Button>
-        <Button variant="rounded" onClick={next}>
+        <Button variant="simple" rounded="full" sx={{padding: 0, justifyContent: 'center'}} onClick={next}>
           <Box as={SvgShortArrow} sx={{path: {fill: 'white'}, transform: 'rotate(90deg)', aspectRatio: '1'}} padding={0} />
         </Button>
       </Flex>
@@ -87,9 +93,13 @@ export default function RecentWork() {
         <Flex flexDir={{base: 'column', md: 'row'}} alignItems="center" gap="28px">
           <Flex flexDir="column">
             <Heading as="h2" fontWeight={700} fontSize="5xl" my="5">Recent Work</Heading>
-            <Text maxW={{ base: '100%', md: '60%', lg: '50%' }} color="#d8d8d8" lineHeight="7">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae temporibus illum consequatur magnam sed. Dolor repudiandae quasi, cupiditate, libero ipsum debitis iure modi dolorum hic iste illo ea impedit aperiam.</Text>
+            <Text maxW={{ base: '100%', md: '60%', lg: '50%' }} color="#d8d8d8" lineHeight="7">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae temporibus illum consequatur magnam sed. Dolor repudiandae quasi, cupiditate, libero ipsum debitis iure modi dolorum hic iste illo ea impedit aperiam.
+            </Text>
           </Flex>
-          <Box minH="100px" h="80%" sx={{aspectRatio: '1'}} backgroundColor="gray.100" borderRadius="50%" />
+          <Box minH="100px" h="80%" sx={{aspectRatio: '1'}} backgroundColor="#282828" borderRadius="50%" display="flex" alignItems="center" justifyContent="center">
+            <SvgWinner width="60px" height="60px" />
+          </Box>
         </Flex>
         <Flex flexDir="column" gap="12px" w="full" mt="12">
           <SimpleSlider />
