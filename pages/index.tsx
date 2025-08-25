@@ -5,6 +5,7 @@ import Hero from '../components/Hero';
 import Navbar from '../components/Navbar';
 import WorkExperience from '../components/WorkExperience';
 import RecentWork from '../components/RecentWork';
+import Contact from '../components/Contact';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <About />
       <WorkExperience />
       <RecentWork />
+      <Contact />
     </Box>
   );
 }
