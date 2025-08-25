@@ -1,6 +1,7 @@
-import { Box, Container, Flex, Heading, Text, Image, VStack, FormControl, FormLabel, Input, Textarea } from '@chakra-ui/react';
+import { Box, Container, Flex, Heading, Text, Image, VStack, FormControl, FormLabel, Input, Textarea, Stack, Icon } from '@chakra-ui/react';
 import SvgShortArrow from '../Svg/SvgShortArrow';
 import Button from '../common/Button';
+import SvgMenuBars from '../Svg/SvgMenuBars';
 
 export default function Contact() {
   return (
@@ -22,34 +23,40 @@ export default function Contact() {
           flexWrap="wrap"
           gap="12px"
           mt="12"
-          w={{ base: '100%', md: '80%', lg: '60%' }}
-          bgColor="blackAlpha.800"
-          border="1px solid rgba(255, 255, 255, 0.3)"
-          borderRadius={8}
-          p="8"
         >
-          <VStack spacing={4} w="full">
+          <Stack spacing={4} w={{ base: '100%', md: '80%', lg: '60%' }} alignItems="center" p="8" bgColor="gray.900" border="1px solid gray.900" borderRadius={8}>
             <Heading as="h4">Get In Touch</Heading>
-            <Flex as="form" flexDir="column" gap="4">
+            <Flex as="form" flexDir="column" gap="4" w="full">
               <FormControl>
                 <FormLabel htmlFor="fullName">Full Name</FormLabel>
-                <Input type="text" placeholder="Your Name" id="fullName" name="fullName" />
+                <Input variant="flushed" type="text" placeholder="Your Name" id="fullName" name="fullName" />
               </FormControl>
               <FormControl>
                 <FormLabel htmlFor="email">Email address</FormLabel>
-                <Input type="email" placeholder="Your Email" id="email" name="email" />
+                <Input variant="flushed" type="email" placeholder="Your Email" id="email" name="email" />
               </FormControl>
               <FormControl>
                 <FormLabel htmlFor="subject">Subject</FormLabel>
-                <Input type="text" placeholder="Subject" id="subject" name="subject" />
+                <Input variant="flushed" type="text" placeholder="Subject" id="subject" name="subject" />
               </FormControl>
               <FormControl>
                 <FormLabel htmlFor="message">Message</FormLabel>
-                <Textarea rows={4} placeholder="Your Message" id="message" name="message" />
+                <Textarea variant="flushed" rows={4} placeholder="Your Message" id="message" name="message" />
               </FormControl>
             </Flex>
             <Button type='submit' variant="rounded">Submit</Button>
-          </VStack>
+          </Stack>
+          <Flex flexDir="column">
+            <Stack bgColor="gray.900" p="8" border="1px solid gray.900" borderRadius={8} spacing={2}>
+              <Heading as="h6" fontSize="2xl">Email</Heading>
+              <Box display="flex" alignItems="center" justifyContent="center" gap="4">
+                <Box display="flex" alignItems="center" justifyContent="center" rounded="full" bgColor="gray.700" p="4">
+                  <Icon as={SvgMenuBars} boxSize="6" sx={{'& path': { fill: 'yellow'}}} />
+                </Box>
+                <Text fontSize="md">azizkhoso586@gmail.com</Text>
+              </Box>
+            </Stack>
+          </Flex>
         </Flex>
       </Container>
     </Box>
