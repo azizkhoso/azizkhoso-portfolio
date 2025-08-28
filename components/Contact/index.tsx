@@ -1,4 +1,18 @@
-import { Box, Container, Flex, Heading, Text, Image, VStack, FormControl, FormLabel, Input, Textarea, Stack, Icon, Link } from '@chakra-ui/react';
+import { Box,
+  Container,
+  Flex,
+  Heading,
+  Text,
+  Image,
+  VStack,
+  FormControl,
+  FormLabel,
+  Input,
+  Textarea,
+  Stack,
+  Icon,
+  Link,
+} from '@chakra-ui/react';
 import SvgShortArrow from '../Svg/SvgShortArrow';
 import Button from '../common/Button';
 import SvgMenuBars from '../Svg/SvgMenuBars';
@@ -27,10 +41,10 @@ export default function Contact() {
           rowGap={8}
           columnGap={8}
           mt="12"
-          w="full"
+          w={{ base: '100%', lg: '80%' }}
           justifyContent="space-between"
         >
-          <Stack spacing={4} w={{ base: '100%', lg: '58%' }} alignItems="center" p="8" bgColor="gray.900" border="1px solid gray.900" borderRadius={8}>
+          <Stack spacing={4} w={{ base: '100%', lg: '58%' }} alignItems="center" p="8" bgColor="gray.900" borderWidth={1} borderColor="gray.400" borderRadius={8}>
             <Heading as="h4">Get In Touch</Heading>
             <Flex as="form" flexDir="column" gap="4" w="full">
               <FormControl>
@@ -58,7 +72,7 @@ export default function Contact() {
               { title: 'Github', icon: SvgGitHub, text: 'azizkhoso', link: 'https://www.github.com/azizkhoso' },
               { title: 'LinkedIn', icon: SvgLinkedIn, text: 'aziz-khoso', link: 'https://www.linkedin.com/in/aziz-khoso/' },
             ].map((item) => (
-              <Stack key={item.title} bgColor="gray.900" p="8" border="1px solid gray.900" borderRadius={8} spacing={2}>
+              <Stack key={item.title} bgColor="gray.900" p="8" borderWidth={1} borderColor="gray.400" borderRadius={8} spacing={2}>
                 <Heading as="h6" fontSize="2xl">{item.title}</Heading>
                 <Box display="flex" alignItems="center" gap="4">
                   <Box display="flex" alignItems="center" justifyContent="center" rounded="full" bgColor="gray.700" p="4">
