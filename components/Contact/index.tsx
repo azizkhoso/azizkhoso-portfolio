@@ -24,7 +24,7 @@ import SvgBlurFilter from '../Svg/SvgBlurFilter';
 
 export default function Contact() {
   return (
-    <Box bgColor="gray.900" pos="relative">
+    <Box bgColor="darkGray.900" pos="relative">
       <SvgBlurFilter fill="red" style={{ position: 'absolute', top: '0', left: '0', zIndex: 0 }} />
       <Container
         maxWidth="container.2xl"
@@ -49,7 +49,7 @@ export default function Contact() {
           w={{ base: '100%', lg: '80%' }}
           justifyContent="space-between"
         >
-          <Stack spacing={4} w={{ base: '100%', lg: '58%' }} alignItems="center" p="8" bgColor="gray.900" borderWidth={1} borderColor="gray.400" borderRadius={8}>
+          <Stack spacing={4} w={{ base: '100%', lg: '58%' }} alignItems="center" p="8" bgColor="darkGray.800" borderWidth={1} borderColor="darkGray.400" borderRadius={8}>
             <Heading as="h4">Get In Touch</Heading>
             <Flex as="form" flexDir="column" gap="4" w="full">
               <FormControl>
@@ -77,10 +77,10 @@ export default function Contact() {
               { title: 'Github', icon: SvgGitHub, text: 'azizkhoso', link: 'https://www.github.com/azizkhoso' },
               { title: 'LinkedIn', icon: SvgLinkedIn, text: 'aziz-khoso', link: 'https://www.linkedin.com/in/aziz-khoso/' },
             ].map((item) => (
-              <Stack key={item.title} bgColor="gray.900" p="8" borderWidth={1} borderColor="gray.400" borderRadius={8} spacing={2}>
+              <Stack key={item.title} bgColor="darkGray.800" p="8" borderWidth={1} borderColor="darkGray.400" borderRadius={8} spacing={2}>
                 <Heading as="h6" fontSize="2xl">{item.title}</Heading>
                 <Box display="flex" alignItems="center" gap="4">
-                  <Box display="flex" alignItems="center" justifyContent="center" rounded="full" bgColor="gray.700" p="4">
+                  <Box display="flex" alignItems="center" justifyContent="center" rounded="full" bgColor="darkGray.700" p="4">
                     <Icon as={item.icon} boxSize="8" sx={{ '& path': { fill: 'yellow' } }} />
                   </Box>
                   <Link href={item.link} target="_blank" fontSize="md">{item.text}</Link>

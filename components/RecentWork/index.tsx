@@ -83,7 +83,7 @@ function SimpleSlider() {
 
 export default function RecentWork() {
   return (
-    <Box bgColor="blackAlpha.900">
+    <Box bgColor="darkGray.900">
       <Container
         maxWidth="container.2xl"
         justifyContent="space-between"

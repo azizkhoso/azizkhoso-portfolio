@@ -10,7 +10,7 @@ import Button from '../common/Button';
 
 export default function Hero() {
   return (
-    <Box bgColor="black">
+    <Box bgColor="blackAlpha.900">
       <Box
         as={Container}
         maxW="container.2xl"

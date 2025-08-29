@@ -4,7 +4,7 @@ import {theme} from '../../pages/_app';
 
 export default function About() {
   return (
-    <Box bgColor="blackAlpha.900">
+    <Box bgColor="darkGray.900">
       <Container
         maxWidth="container.2xl"
         justifyContent="space-between"

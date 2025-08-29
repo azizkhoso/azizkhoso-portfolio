@@ -3,7 +3,7 @@ import SvgShortArrow from '../Svg/SvgShortArrow';
 
 export default function WorkExperience() {
   return (
-    <Box bgColor="black">
+    <Box bgColor="blackAlpha.900">
       <Container
         maxWidth="container.2xl"
         justifyContent="space-between"
@@ -70,7 +70,7 @@ export default function WorkExperience() {
                   key={wk.startDate}
                   py="5"
                   px={{ base: '3', md: '8', lg: '16' }}
-                  background="gray.900"
+                  background="darkGray.700"
                   borderRadius="8px"
                   marginBottom="30px"
                   position="relative"

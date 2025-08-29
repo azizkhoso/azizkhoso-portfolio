@@ -57,6 +57,17 @@ export const theme = extendTheme({
       800: '#212529',
       900: '#343a40',
     },
+    darkGray: {
+      900: '#191919',
+      800: '#212121',
+      700: '#2c2c2c',
+      600: '#383838',
+      500: '#444444',
+      400: '#505050',
+      300: '#5c5c5c',
+      200: '#686868',
+      100: '#747474',
+    },
     yellow: {
       100: baseYellow.lighten(40).toHexString(),
       200: baseYellow.lighten(30).toHexString(),
