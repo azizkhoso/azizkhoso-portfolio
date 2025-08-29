@@ -1,4 +1,5 @@
-import { Box,
+import {
+  Box,
   Container,
   Flex,
   Heading,
@@ -19,10 +20,12 @@ import SvgMenuBars from '../Svg/SvgMenuBars';
 import SvgEmail from '../Svg/SvgEmail';
 import SvgLinkedIn from '../Svg/SvgLinkedIn';
 import SvgGitHub from '../Svg/SvgGitHub';
+import SvgBlurFilter from '../Svg/SvgBlurFilter';
 
 export default function Contact() {
   return (
-    <Box bgColor="black">
+    <Box bgColor="gray.900" pos="relative">
+      <SvgBlurFilter fill="red" style={{ position: 'absolute', top: '0', left: '0', zIndex: 0 }} />
       <Container
         maxWidth="container.2xl"
         justifyContent="space-between"
@@ -30,6 +33,8 @@ export default function Contact() {
         flexDir="column"
         alignItems="center"
         py="10"
+        zIndex={1}
+        pos="relative"
       >
         <Heading as="h2" fontWeight={700} textAlign="center" fontSize={{ base: '2xl', md: '3xl', lg: '5xl' }} my="5">Let&apos;s Talk</Heading>
         <Text maxW={{ base: '100%', md: '60%', lg: '50%' }} color="#d8d8d8" lineHeight="7" textAlign="center" fontSize={{ base: 'sm', lg: 'md' }}>
@@ -66,7 +71,7 @@ export default function Contact() {
             </Flex>
             <Button type='submit' variant="rounded">Submit</Button>
           </Stack>
-          <Flex flexDir="column" w={{base: '100%', lg: '38%'}} rowGap="8">
+          <Flex flexDir="column" w={{ base: '100%', lg: '38%' }} rowGap="8">
             {[
               { title: 'Email', icon: SvgEmail, text: 'azizkhoso586@gmail.com', link: 'mailto:azizkhoso586@gmail.com' },
               { title: 'Github', icon: SvgGitHub, text: 'azizkhoso', link: 'https://www.github.com/azizkhoso' },

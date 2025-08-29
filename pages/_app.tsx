@@ -1,8 +1,11 @@
 import type { AppProps } from 'next/app';
 import { ChakraProvider, extendTheme, Heading } from '@chakra-ui/react';
 import Head from 'next/head';
+import tinycolor from 'tinycolor2';
 
 import '../styles/globals.css';
+
+const baseYellow = tinycolor('#ffc107');
 
 /** @type {import('@chakra-ui/react').ChakraTheme} */
 export const theme = extendTheme({
@@ -54,6 +57,17 @@ export const theme = extendTheme({
       800: '#212529',
       900: '#343a40',
     },
+    yellow: {
+      100: baseYellow.lighten(40).toHexString(),
+      200: baseYellow.lighten(30).toHexString(),
+      300: baseYellow.lighten(20).toHexString(),
+      400: baseYellow.lighten(10).toHexString(),
+      500: baseYellow.toHexString(),
+      600: baseYellow.darken(10).toHexString(),
+      700: baseYellow.darken(20).toHexString(),
+      800: baseYellow.darken(30).toHexString(),
+      900: baseYellow.darken(40).toHexString(),
+    }
   },
 });
 
