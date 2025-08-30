@@ -47,6 +47,7 @@ export default function Navbar() {
       right={0}
       top={0}
       w="full"
+      zIndex={100}
     >
       <Container
         as="nav"

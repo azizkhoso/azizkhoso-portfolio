@@ -1,4 +1,4 @@
-import { Box, Container, Flex, Text, Image } from '@chakra-ui/react';
+import { Box, Container, Flex, Text, Image, Icon } from '@chakra-ui/react';
 import SvgShortArrow from '../Svg/SvgShortArrow';
 
 import halfProfile from '../../public/half-profile.png';
@@ -7,10 +7,29 @@ import nodejsIcon from '../../public/nodejs-icon.svg';
 import mongodbIcon from '../../public/mongodb-icon.svg';
 import completeProject from '../../public/complete-project.svg';
 import Button from '../common/Button';
+import SvgBlurFilter from '../Svg/SvgBlurFilter';
 
 export default function Hero() {
   return (
-    <Box bgColor="blackAlpha.900">
+    <Box bgColor="blackAlpha.900" pos="relative" overflow="hidden">
+      <Icon as={SvgBlurFilter}
+        fill="red.500"
+        style={{ position: 'absolute', top: 10, left: 10 }}
+        width={500}
+        height={500}
+      />
+      <Icon as={SvgBlurFilter}
+        fill="yellow"
+        style={{ position: 'absolute', top: "10%", right: "5%" }}
+        width={1000}
+        height={1000}
+      />
+      <Icon as={SvgBlurFilter}
+        fill="cyan"
+        style={{ position: 'absolute', top: -100, right: -100 }}
+        width={450}
+        height={450}
+      />
       <Box
         as={Container}
         maxW="container.2xl"
@@ -19,6 +38,7 @@ export default function Hero() {
         justifyContent="space-between"
         display="flex"
         flexFlow="row wrap"
+        zIndex={1}
       >
         <Flex
           w={{ base: 'full', lg: '48%' }}

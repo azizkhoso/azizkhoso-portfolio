@@ -1,23 +1,28 @@
-import * as React from "react"
-import { SVGProps } from "react"
+import * as React from "react";
+import { SVGProps } from "react";
+
 function SvgBlurFilter(props: SVGProps<SVGSVGElement>) {
   const id = React.useId();
   return (
-    <svg width={1038} height={938} {...props}>
-      <g filter={`url(#${id})`} opacity={0.5}>
-        <circle cx={290.5} cy={282.5} r={247.5} />
+    <svg
+      viewBox="0 0 1500 1500"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <g filter={`url(#${id})`} opacity={0.7}>
+        <circle cx={750} cy={750} r={240} />
       </g>
       <defs>
         <filter
           id={id}
-          width={1495}
-          height={1495}
-          x={-457}
-          y={-465}
+          x="0%"
+          y="0%"
+          width="100%"
+          height="100%"
           colorInterpolationFilters="sRGB"
           filterUnits="userSpaceOnUse"
         >
-          <feFlood floodOpacity={0} result="BackgroundImageFix" />
+          <feFlood floodOpacity={0.1} result="BackgroundImageFix" />
           <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
           <feGaussianBlur
             result="effect1_foregroundBlur_39_4392"
@@ -28,4 +33,5 @@ function SvgBlurFilter(props: SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
+
 export default SvgBlurFilter;
