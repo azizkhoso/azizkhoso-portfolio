@@ -11,7 +11,14 @@ import SvgBlurFilter from '../Svg/SvgBlurFilter';
 
 export default function Hero() {
   return (
-    <Box bgColor="blackAlpha.900" pos="relative" overflow="hidden">
+    <Box
+      bgColor="blackAlpha.900"
+      pos="relative"
+      overflow="hidden"
+      display="flex"
+      height={{ base: 'auto', lg: '100vh' }}
+      maxHeight={{ base: 'auto', lg: '880px' }}
+    >
       <Icon as={SvgBlurFilter}
         fill="red.500"
         style={{ position: 'absolute', top: 10, left: 10 }}
@@ -34,7 +41,7 @@ export default function Hero() {
         as={Container}
         maxW="container.2xl"
         pb="16"
-        pt={{base: '8', lg: '36'}}
+        pt={{base: '8', lg: '28'}}
         justifyContent="space-between"
         display="flex"
         flexFlow="row wrap"
@@ -45,8 +52,9 @@ export default function Hero() {
           flexDir="column"
           alignItems={{ base: 'center', lg: 'flex-start' }}
           textAlign={{ base: 'center', lg: 'left' }}
-          pt="90px"
-          pb="85px"
+          // pt="10px"
+          // pb="10px"
+          my="auto"
           color="white"
         >
           <Text fontWeight="700" fontSize={{base: '3xl', md: '6xl', lg: '8xl' }}>
@@ -73,14 +81,18 @@ export default function Hero() {
         </Flex>
         <Flex
           w={{ base: 'full', lg: '48%' }}
+          flexGrow={1}
           flexDir="column"
           alignItems={{ base: 'center', lg: 'flex-start' }}
+          justifyContent="center"
           textAlign={{ base: 'center', lg: 'left' }}
         >
           <Box 
             width={{base: '300px', md: '400px', lg: '450px', xl: '500px'}}
             height={{base: '300px', md: '400px', lg: '450px', xl: '500px'}}
             pos="relative"
+            my="auto"
+            mx="auto"
           >
             {[
               { icon: reactIcon.src, top: '1%', left: '-5%' },
