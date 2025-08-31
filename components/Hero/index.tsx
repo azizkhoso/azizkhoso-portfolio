@@ -8,6 +8,7 @@ import mongodbIcon from '../../public/mongodb-icon.svg';
 import completeProject from '../../public/complete-project.svg';
 import Button from '../common/Button';
 import SvgBlurFilter from '../Svg/SvgBlurFilter';
+import DownloadResumeButton from '../common/DownloadResumeButton';
 
 export default function Hero() {
   return (
@@ -16,8 +17,7 @@ export default function Hero() {
       pos="relative"
       overflow="hidden"
       display="flex"
-      height={{ base: 'auto', lg: '100vh' }}
-      maxHeight={{ base: 'auto', lg: '880px' }}
+      h="auto"
     >
       <Icon as={SvgBlurFilter}
         fill="red.500"
@@ -41,43 +41,53 @@ export default function Hero() {
         as={Container}
         maxW="container.2xl"
         pb="16"
-        pt={{base: '8', lg: '28'}}
+        pt={{ base: '24', lg: '28' }}
         justifyContent="space-between"
         display="flex"
         flexFlow="row wrap"
         zIndex={1}
+        gap={{ base: 8, lg: 2 }}
       >
         <Flex
           w={{ base: 'full', lg: '48%' }}
           flexDir="column"
           alignItems={{ base: 'center', lg: 'flex-start' }}
           textAlign={{ base: 'center', lg: 'left' }}
-          // pt="10px"
-          // pb="10px"
           my="auto"
           color="white"
         >
-          <Text fontWeight="700" fontSize={{base: '3xl', md: '6xl', lg: '8xl' }}>
-            <Text as="span" fontSize={{base: '2xl', md: '4xl', lg: '5xl'}} color="yellow">
+          <Text fontWeight="700" fontSize={{ base: '4xl', md: '4xl', lg: '6xl' }}>
+            <Text as="span" fontSize={{ base: '2xl', md: '4xl', lg: '5xl' }} color="yellow">
               Hello, I am
             </Text>
             <br />
             Abdul Aziz Khoso.
           </Text>
-          <Text fontWeight={700} fontSize={{base: 'lg', md: '2xl', lg: '3xl'}} color="#59c378" mb={5}>
+          <Text fontWeight={700} fontSize={{ base: 'lg', md: '2xl', lg: '3xl' }} color="#59c378" mb={5}>
             Full Stack Developer
           </Text>
-          <Text fontSize={{base: 'md', md: 'lg'}} mb="30px">
+          <Text fontSize={{ base: 'md', md: 'lg' }} mb="30px">
             By writing efficient code with robust architecture, I develop masterpiece applications and maintain existing large scale projects.
           </Text>
-          <Button
-            variant="rounded"
-            rightIcon={
-              <Box as={SvgShortArrow} fill="white" h="28px" transform="rotate(90deg)" w="18px" />
-            }
+          <Box
+            as={Flex}
+            flexDir="row"
+            flexWrap="wrap"
+            w="full"
+            gap="2"
+            alignItems="center"
+            justifyContent={{ base: 'center', lg: 'flex-start' }}
           >
-            Hire me
-          </Button>
+            <Button
+              variant="rounded"
+              rightIcon={
+                <Box as={SvgShortArrow} fill="white" h="28px" transform="rotate(90deg)" w="18px" />
+              }
+            >
+              Hire me
+            </Button>
+            <DownloadResumeButton display={{ base: 'inline-flex', md: 'none' }} />
+          </Box>
         </Flex>
         <Flex
           w={{ base: 'full', lg: '48%' }}
@@ -87,9 +97,9 @@ export default function Hero() {
           justifyContent="center"
           textAlign={{ base: 'center', lg: 'left' }}
         >
-          <Box 
-            width={{base: '300px', md: '400px', lg: '450px', xl: '500px'}}
-            height={{base: '300px', md: '400px', lg: '450px', xl: '500px'}}
+          <Box
+            width={{ base: '300px', md: '400px', lg: '450px', xl: '500px' }}
+            height={{ base: '300px', md: '400px', lg: '450px', xl: '500px' }}
             pos="relative"
             my="auto"
             mx="auto"
@@ -102,9 +112,9 @@ export default function Hero() {
             ].map((item, index) => (
               <Box
                 key={index}
-                borderRadius={24}
-                width={item.isDifferent ? 'auto' : '100px'}
-                height={item.isDifferent ? 'auto' : '100px'}
+                borderRadius="24px"
+                width={item.isDifferent ? 'auto' : 'max(20%, 70px)'}
+                height={item.isDifferent ? 'auto' : 'max(20%, 70px)'}
                 bgColor="white"
                 pos="absolute"
                 top={item.top}
@@ -120,10 +130,10 @@ export default function Hero() {
                   alt="reactjs"
                   style={{
                     width: '100%',
-                    maxWidth: item.isDifferent ? '200px' : '70px',
+                    maxWidth: item.isDifferent ? '200px' : '80%',
                     backgroundColor: item.isDifferent ? 'white' : '#002742',
-                    borderRadius: '16px',
-                    padding: '12px',
+                    borderRadius: '18px',
+                    padding: '2',
                   }}
                 />
               </Box>

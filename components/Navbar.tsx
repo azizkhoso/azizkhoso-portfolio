@@ -22,6 +22,7 @@ import face from '../public/face.png';
 import SvgShortArrow from './Svg/SvgShortArrow';
 import SvgMenuBars from './Svg/SvgMenuBars';
 import Button from './common/Button';
+import DownloadResumeButton from './common/DownloadResumeButton';
 
 const navLinks = [
   { title: 'Home', link: '#name' },
@@ -138,22 +139,7 @@ export default function Navbar() {
           </List>
         </Box>
         <Box display="flex" alignItems="center" justifyContent="flex-end" w="2-12">
-          <Button
-            variant="rounded"
-            rightIcon={
-              <Box
-                as={SvgShortArrow}
-                fill="white"
-                h="28px"
-                mt="1"
-                ml={-1}
-                transform="rotate(180deg)"
-                w="18px"
-              />
-            }
-          >
-            Resume
-          </Button>
+          <DownloadResumeButton display={{ base: 'none', md: 'inline-flex' }} />
         </Box>
       </Container>
     </Box>
