@@ -1,9 +1,17 @@
 import { Box, Container, Flex, Heading, Text, Image } from '@chakra-ui/react';
 import SvgShortArrow from '../Svg/SvgShortArrow';
+import SvgBlurFilter from '../Svg/SvgBlurFilter';
 
 export default function WorkExperience() {
   return (
-    <Box bgColor="blackAlpha.900">
+    <Box bgColor="darkGray.900" pos="relative" overflow="hidden">
+      <SvgBlurFilter
+        fill="red"
+        style={{ position: 'absolute', top: "calc(50% - 450px)", right: "calc(50% - 450px)" }}
+        width={900}
+        height={900}
+        opacity={0.5}
+      />
       <Container
         maxWidth="container.2xl"
         justifyContent="space-between"
@@ -14,7 +22,7 @@ export default function WorkExperience() {
       >
         <Heading as="h2" fontWeight={700} textAlign="center" fontSize={{ base: '2xl', md: '3xl', lg: '5xl' }} my="5">My Work Experience</Heading>
         <Text maxW={{ base: '100%', md: '60%', lg: '50%' }} color="#d8d8d8" lineHeight="7" textAlign="center" fontSize={{ base: 'sm', lg: 'md' }}>
-          Having hands-on experience with all 3 layers of a web app, i.e. frontend, backend, and deployment, I stand out in top 5% developers. My work experience 
+          Having hands-on experience with all 3 layers of a web app, i.e. frontend, backend, and deployment, I stand out in top 5% developers. My work experience
           has equipped me with essential expertise that highlights me in the world full of developers.
         </Text>
         <Flex flexDir="column" gap="12px" w="full" mt="12">
@@ -29,7 +37,7 @@ export default function WorkExperience() {
                   size: '80%',
                 },
                 company: 'Centegy Technologies, Pakistan',
-                link: 'https://www.linkedin.com/company/centegy-technologies-fz-llc-dubai/' 
+                link: 'https://www.linkedin.com/company/centegy-technologies-fz-llc-dubai/'
               },
               {
                 startDate: 'Feb, 2024',
@@ -40,7 +48,7 @@ export default function WorkExperience() {
                   size: '80%',
                 },
                 company: 'ForwardYou AG, Pakistan',
-                link: 'https://www.linkedin.com/company/fwu-ag/' 
+                link: 'https://www.linkedin.com/company/fwu-ag/'
               },
               {
                 startDate: 'Seb, 2023',
@@ -51,7 +59,7 @@ export default function WorkExperience() {
                   size: '100%',
                 },
                 company: 'Fluid Work, Germany',
-                link: 'https://www.linkedin.com/company/fluidwork-io/' 
+                link: 'https://www.linkedin.com/company/fluidwork-io/'
               },
               {
                 startDate: 'Dec, 2021',
@@ -63,7 +71,7 @@ export default function WorkExperience() {
                 },
                 company: 'Forward Solutions, Pakistan',
                 link: 'https://www.linkedin.com/company/forward-solutions/'
-               }
+              }
             ]
               .map((wk) => (
                 <Box
@@ -81,7 +89,7 @@ export default function WorkExperience() {
                   flexWrap="wrap"
                   color="white"
                   gap={{ base: '16px', md: 'none' }}
-                  _hover={{border: '1px solid gray', transform: 'scale(1.015)', transition: 'all 0.2s ease-in-out'}}
+                  _hover={{ border: '1px solid gray', transform: 'scale(1.015)', transition: 'all 0.2s ease-in-out' }}
                 >
                   <Text
                     fontSize={{ base: 'md', md: 'lg', lg: 'xl' }}
@@ -116,7 +124,7 @@ export default function WorkExperience() {
                     as="a"
                     href={wk.link}
                     target='_blank'
-                    fontSize={{base: 'smaller', md: 'sm', lg: 'md'}}
+                    fontSize={{ base: 'smaller', md: 'sm', lg: 'md' }}
                     w={{ base: 'full', sm: '30%', lg: 'fit-content' }}
                     display="flex"
                     justifyContent={{ base: 'center', lg: 'flex-end' }}

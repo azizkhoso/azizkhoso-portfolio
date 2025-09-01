@@ -1,10 +1,23 @@
 import { Box, Container, Flex, Heading, Text } from '@chakra-ui/react';
 
-import {theme} from '../../pages/_app';
+import { theme } from '../../pages/_app';
+import SvgBlurFilter from '../Svg/SvgBlurFilter';
 
 export default function About() {
   return (
-    <Box bgColor="darkGray.900">
+    <Box bgColor="darkGray.900" pos="relative" overflow="hidden">
+      <SvgBlurFilter
+        fill="indigo"
+        style={{ position: 'absolute', top: "-200", right: "-200" }}
+        width={700}
+        height={700}
+      />
+      <SvgBlurFilter
+        fill="yellow"
+        style={{ position: 'absolute', bottom: "-200", left: "-200" }}
+        width={700}
+        height={700}
+      />
       <Container
         maxWidth="container.2xl"
         justifyContent="space-between"
@@ -12,6 +25,7 @@ export default function About() {
         flexFlow="row wrap"
         alignItems="center"
         py="20"
+        zIndex={1}
       >
         <Flex width={{ base: 'full', lg: '50%' }}>
           <Box as={Flex} flexDirection="column" width="full" pos="relative">
@@ -85,66 +99,66 @@ export default function About() {
         </Flex>
         <Flex width={{ base: 'full', lg: '50%' }}>
           <Box as={Flex} flexDirection="column" width="full" pos="relative" m="auto">
-              <Heading fontSize="5xl" mb="5">My Advantages</Heading>
-              <Text>Developing and maintaining large scale applications requires hands-on experience in crucial technologies. I am always up to date with latest tools and trends.</Text>
-              <Flex flexWrap="wrap" justify="space-between" align="center" mt="40px" gap="20px">
-                {
-                  [
-                    {label: 'NodeJS', color: theme.colors.red[500], logo: '50%'},
-                    {label: 'ExpressJS', color: theme.colors.yellow[500], logo: '50%'},
-                    {label: 'ReactJS', color: theme.colors.green[500], logo: '50%'},
-                    {label: 'MongoDB', color: theme.colors.orange[500], logo: '50%'},
-                    {label: 'Google Cloud', color: theme.colors.purple[500], logo: '50%'},
-                    {label: 'SQL', color: theme.colors.blue[500], logo: '50%'},
-                  ].map((adv) => (
-                    <Flex
-                      key={adv.label}
-                      w="full"
-                      maxW="30%"
-                      borderRadius="12px"
-                      p="30px 12px"
-                      bg="transparent"
-                      pos="relative"
-                      display="flex"
-                      flexDir="column"
-                      gap="16px"
-                      zIndex={1}
-                      alignItems="center"
-                      _before={{
-                        position: 'absolute',
-                        left: '1%',
-                        top: '2px',
-                        width: '98%',
-                        height: '96%',
-                        opacity: 0.85,
-                        background: '#2d2b1f',
-                        zIndex: -1,
-                        borderRadius: '12px',
-                        content: '""',
-                      }}
-                      _after={{
-                        position: 'absolute',
-                        top: 0,
-                        right: 0,
-                        w: '100%',
-                        height: '100%',
-                        content: '""',
-                        bg: `linear-gradient(180deg,${adv.color},rgba(28,26,26,.3))`,
-                        opacity: 1,
-                        zIndex: -2,
-                        borderRadius: '12px',
-                      }}
-                    >
-                      <Heading flexBasis="50%" as="h3" color="white" fontSize="44px">
-                        {adv.logo}
-                      </Heading>
-                      <Text color={adv.color}>
-                        {adv.label}
-                      </Text>
-                    </Flex>
-                  ))
-                }
-              </Flex>
+            <Heading fontSize="5xl" mb="5">My Advantages</Heading>
+            <Text>Developing and maintaining large scale applications requires hands-on experience in crucial technologies. I am always up to date with latest tools and trends.</Text>
+            <Flex flexWrap="wrap" justify="space-between" align="center" mt="40px" gap="20px">
+              {
+                [
+                  { label: 'NodeJS', color: theme.colors.red[500], logo: '50%' },
+                  { label: 'ExpressJS', color: theme.colors.yellow[500], logo: '50%' },
+                  { label: 'ReactJS', color: theme.colors.green[500], logo: '50%' },
+                  { label: 'MongoDB', color: theme.colors.orange[500], logo: '50%' },
+                  { label: 'Google Cloud', color: theme.colors.purple[500], logo: '50%' },
+                  { label: 'SQL', color: theme.colors.blue[500], logo: '50%' },
+                ].map((adv) => (
+                  <Flex
+                    key={adv.label}
+                    w="full"
+                    maxW="30%"
+                    borderRadius="12px"
+                    p="30px 12px"
+                    bg="transparent"
+                    pos="relative"
+                    display="flex"
+                    flexDir="column"
+                    gap="16px"
+                    zIndex={1}
+                    alignItems="center"
+                    _before={{
+                      position: 'absolute',
+                      left: '1%',
+                      top: '2px',
+                      width: '98%',
+                      height: '96%',
+                      opacity: 0.85,
+                      background: '#2d2b1f',
+                      zIndex: -1,
+                      borderRadius: '12px',
+                      content: '""',
+                    }}
+                    _after={{
+                      position: 'absolute',
+                      top: 0,
+                      right: 0,
+                      w: '100%',
+                      height: '100%',
+                      content: '""',
+                      bg: `linear-gradient(180deg,${adv.color},rgba(28,26,26,.3))`,
+                      opacity: 1,
+                      zIndex: -2,
+                      borderRadius: '12px',
+                    }}
+                  >
+                    <Heading flexBasis="50%" as="h3" color="white" fontSize="44px">
+                      {adv.logo}
+                    </Heading>
+                    <Text color={adv.color}>
+                      {adv.label}
+                    </Text>
+                  </Flex>
+                ))
+              }
+            </Flex>
           </Box>
         </Flex>
       </Container>
