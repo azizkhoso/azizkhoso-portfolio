@@ -7,6 +7,7 @@ import React from 'react';
 import Button from '../common/Button';
 import SvgShortArrow from '../Svg/SvgShortArrow';
 import SvgWinner from '../Svg/SvgWinner';
+import SvgBlurFilter from '../Svg/SvgBlurFilter';
 
 const projects = [
   { name: 'Zoxxo', category: 'Web App', image: '/assets/zoxxo-cover.png' },
@@ -83,7 +84,14 @@ function SimpleSlider() {
 
 export default function RecentWork() {
   return (
-    <Box bgColor="darkGray.900">
+    <Box bgColor="darkGray.900" pos="relative" overflow="hidden">
+      <SvgBlurFilter
+        fill="teal"
+        style={{ position: 'absolute', top: "calc(30% - ((700 / 2) * 1px))", right: "calc((-700 / 3) * 1px)"}}
+        width={700}
+        height={700}
+        opacity={0.6}
+      />
       <Container
         maxWidth="container.2xl"
         justifyContent="space-between"
@@ -91,6 +99,8 @@ export default function RecentWork() {
         flexDir="column"
         alignItems="center"
         py="10"
+        pos="relative"
+        zIndex={1}
       >
         <Flex flexDir={{ base: 'column', md: 'row' }} alignItems="center" gap="28px">
           <Flex flexDir="column">

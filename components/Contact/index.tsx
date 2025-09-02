@@ -24,8 +24,14 @@ import SvgBlurFilter from '../Svg/SvgBlurFilter';
 
 export default function Contact() {
   return (
-    <Box bgColor="darkGray.900" pos="relative">
-      <SvgBlurFilter fill="red" style={{ position: 'absolute', top: '0', left: '0', zIndex: 0 }} />
+    <Box bgColor="darkGray.800" pos="relative" overflow="hidden">
+      <SvgBlurFilter
+        fill="indigo"
+        style={{ position: 'absolute', top: "calc(50% - ((800 / 2) * 1px))", right: "calc(50% - ((800 / 2) * 1px))"}}
+        width={800}
+        height={800}
+        opacity={0.6}
+      />
       <Container
         maxWidth="container.2xl"
         justifyContent="space-between"

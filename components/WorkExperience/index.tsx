@@ -4,7 +4,7 @@ import SvgBlurFilter from '../Svg/SvgBlurFilter';
 
 export default function WorkExperience() {
   return (
-    <Box bgColor="darkGray.900" pos="relative" overflow="hidden">
+    <Box bgColor="darkGray.800" pos="relative" overflow="hidden">
       <SvgBlurFilter
         fill="red"
         style={{ position: 'absolute', top: "calc(50% - 450px)", right: "calc(50% - 450px)" }}
