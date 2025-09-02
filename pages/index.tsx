@@ -6,6 +6,7 @@ import Navbar from '../components/Navbar';
 import WorkExperience from '../components/WorkExperience';
 import RecentWork from '../components/RecentWork';
 import Contact from '../components/Contact';
+import Footer from '../components/Footer';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <WorkExperience />
       <RecentWork />
       <Contact />
+      <Footer />
     </Box>
   );
 }
