@@ -1,4 +1,4 @@
-import { Box, Container, Flex, Heading, Link, Text } from "@chakra-ui/react";
+import { Box, Container, Flex, Heading, Icon, Link, List, ListItem, Text } from "@chakra-ui/react";
 import SvgBlurFilter from "./Svg/SvgBlurFilter";
 import Image from "next/image";
 
@@ -6,6 +6,13 @@ import face from '../public/face.png';
 import SvgLinkedIn from "./Svg/SvgLinkedIn";
 import SvgGitHub from "./Svg/SvgGitHub";
 import SvgEmail from "./Svg/SvgEmail";
+
+const navLinks = [
+  { title: 'About', link: '#about' },
+  { title: 'Service', link: '#service' },
+  { title: 'Portfolio', link: '#portfolio' },
+  { title: 'Contact', link: '#contact' },
+];
 
 export default function Footer() {
   return (
@@ -48,41 +55,48 @@ export default function Footer() {
             <Text my={8}>
               Building reliable apps, fixing tricky bugs, and deploying to the cloud — so you don’t have to worry about it.
             </Text>
-            <Flex flexWrap="wrap" gap="4">
-              <Link
-                href="https://www.linkedin.com/in/aziz-khoso/"
-                target="_blank"
-                as={SvgLinkedIn}
-                width={6}
-                height={6}
-                fill="white"
-                _hover={{ fill: 'yellow' }}
-              />
-              <Link
-                href="https://www.github.com/azizkhoso"
-                target="_blank"
-                as={SvgGitHub}
-                width={6}
-                height={6}
-                fill="white"
-                _hover={{ fill: 'yellow' }}
-              />
-              <Link
-                href="mailto:azizkhoso586@gmail.com"
-                target="_blank"
-                as={SvgEmail}
-                width={6}
-                height={6}
-                fill="white"
-                _hover={{ fill: 'yellow' }}
-              />
+            <Flex flexWrap="wrap" gap="4" id="social-contacts">
+              {[
+                { link: 'https://www.linkedin.com/in/aziz-khoso/', icon: SvgLinkedIn },
+                { link: 'https://www.github.com/azizkhoso', icon: SvgGitHub },
+                { link: 'mailto:azizkhoso586@gmail.com', icon: SvgEmail }
+              ].map((contact) => (
+                <Link href={contact.link} target="_blank" key={contact.link} width={6} height={6}>
+                  <Icon as={contact.icon} fill="white" _hover={{ fill: 'yellow' }} />
+                </Link>
+              ))}
             </Flex>
           </Box>
           <Box display="flex" flexDir="column" w={{ base: 'full', md: '48%', lg: '28%' }}>
             <Heading as="h6" fontSize={{ base: 'lg', lg: '3xl' }} fontWeight={700}>Navigation</Heading>
-            <Text>
-              Lorem ipsum30
-            </Text>
+            <Box
+              alignItems="center"
+              display="flex"
+              flexGrow="1"
+              pt="8"
+            >
+              <List display="flex" flexDir="column" alignItems="flex-start">
+                {navLinks.map((lnk) => (
+                  <ListItem
+                    as={Link}
+                    color="white"
+                    fontWeight={500}
+                    fontSize="xl"
+                    href={lnk.link}
+                    borderBottomWidth="4px"
+                    borderColor="transparent"
+                    _hover={{
+                      color: 'green.500',
+                      textDecor: 'none'
+                    }}
+                    key={lnk.title}
+                    py={2}
+                  >
+                    -&nbsp;&nbsp;&nbsp;&nbsp;{lnk.title}
+                  </ListItem>
+                ))}
+              </List>
+            </Box>
           </Box>
         </Flex>
       </Container>
