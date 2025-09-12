@@ -19,10 +19,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import face from '../public/face.png';
-import SvgShortArrow from './Svg/SvgShortArrow';
 import SvgMenuBars from './Svg/SvgMenuBars';
-import Button from './common/Button';
 import DownloadResumeButton from './common/DownloadResumeButton';
+import { isBrowser } from '../utils';
 
 const navLinks = [
   { title: 'Home', link: '#name' },
@@ -36,6 +35,23 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setOpen] = React.useState<boolean>(false);
   const isMobileScreen = useBreakpointValue<boolean>({ base: true, lg: false });
+  const ref = React.useRef<HTMLDivElement>();
+
+  React.useEffect(() => {
+    function scrollHandler(scEvent: Event) {
+      if (window.scrollY > 90) {
+        ref.current!.style.backgroundColor = 'var(--chakra-colors-blackAlpha-900)';
+      } else {
+        ref.current!.style.backgroundColor = 'transparent';
+      }
+    }
+    if (isBrowser()) {
+      window.addEventListener('scroll', scrollHandler)
+    }
+    return () => {
+      if (isBrowser()) window.removeEventListener('scroll', scrollHandler);
+    };
+  }, []);
   return (
     <Box
       as="header"
@@ -43,12 +59,20 @@ export default function Navbar() {
       color="white"
       display="flex"
       left={0}
-      pos="absolute"
+      pos="fixed"
       py="5px"
       right={0}
       top={0}
       w="full"
       zIndex={100}
+      ref={(c: any) => {
+        ref.current = c;
+      }}
+      sx={{
+        '& .scrolled': {
+          bgColor: 'darkGray.900'
+        }
+      }}
     >
       <Container
         as="nav"
